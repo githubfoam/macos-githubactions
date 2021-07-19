@@ -99,4 +99,3 @@ jobs:
         run: system_profiler | more  
       - name: "osfingerprinting"
         run: uname -a                           
-s 

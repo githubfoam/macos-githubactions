@@ -1,5 +1,7 @@
 # macos-githubactions
 
+[![.github/workflows/macos-osquery-workflow.yml](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml/badge.svg?branch=main)](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml)
+
 ~~~~
 macos_osquery 
 https://gist.github.com/githubfoam/6753b5efad8e5ab8fa2ca29ce7b29988
