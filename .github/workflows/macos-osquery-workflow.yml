@@ -3,7 +3,10 @@ name: "macos osquery CI workflow"
 
 on:
   push:
-    branches: [ test ]
+    branches: [ main ]
+  schedule:
+      - cron:  '0 0 * * 0' #At 00:00 on Sunday every week
+
 
 
 jobs:
@@ -54,8 +57,6 @@ jobs:
         run: |
             chmod +x scripts/dfir_osquery.sh
             sh scripts/dfir_osquery.sh          
-      # - name: "brew upgrade"
-      #   run: brew upgrade
       - name: "check on brew version"
         run: brew --version   #Homebrew 2.5.12   
       - name: "brew cask list"
@@ -68,9 +69,7 @@ jobs:
         run: system_profiler | more  
       - name: "osfingerprinting"
         run: uname -a                           
-      # - name: "brew doctor"
-      #   run: |
-      #     brew doctor #Check brew for potential problems 
+
 
   macos-1015:
       name: "macos-10.15"
@@ -88,8 +87,6 @@ jobs:
         run: |
             chmod +x scripts/dfir_osquery.sh
             sh scripts/dfir_osquery.sh         
-      # - name: "brew upgrade"
-      #   run: brew upgrade
       - name: "check on brew version"
         run: brew --version   #Homebrew 2.5.12   
       - name: "brew cask list"
@@ -102,6 +99,4 @@ jobs:
         run: system_profiler | more  
       - name: "osfingerprinting"
         run: uname -a                           
-      # - name: "brew doctor"
-      #   run: |
-      #     brew doctor #Check brew for potential problems 
+s 
