@@ -1,0 +1,2 @@
+# macos-githubactions
+macos osquery
