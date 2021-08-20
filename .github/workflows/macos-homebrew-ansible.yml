@@ -49,6 +49,13 @@ jobs:
           ansible-playbook playbooks/local.yml --check
       - name: "Run playbook locally"
         run: ansible-playbook playbooks/local.yml --check
+      - name: "Run playbook ruby role locally"
+        run: |
+          ansible-playbook --list-tags playbooks/localhost_macos.yml
+          ansible-playbook --syntax-check playbooks/localhost_macos.yml
+          ansible-playbook --list-hosts playbooks/localhost_macos.yml
+          ansible-playbook playbooks/localhost_macos.yml --check 
+          ansible-playbook playbooks/localhost_macos.yml --tags "ruby"       
 
   # macos-110:
   #     name: "macos-11.0"
