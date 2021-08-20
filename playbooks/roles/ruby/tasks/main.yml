@@ -3,11 +3,11 @@
   homebrew:
     name: ruby
     state: latest
-  tags: ruby-install
+  tags: ruby-deploy
 
 - name: install Gems
   gem:
     name: '{{ item }}'
     state: latest
   with_items: '{{ gems }}'
-  tags: ruby-gem-install
+  tags: ruby-gem-deploy
