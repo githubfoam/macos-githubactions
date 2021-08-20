@@ -27,11 +27,12 @@ jobs:
           python3 -V
           pip --version
           python -m pip install --user ansible  
-          which ansible
           echo $PATH          
-          # export PATH=/opt/local/bin:/opt/local/sbin:$PATH  
-          # ansible --version                  
-                         
+          export PATH=/opt/local/bin:/opt/local/sbin:$PATH  
+          ansible --version                  
+      - name: "which ansible"
+        run: which ansible
+
   macos-latest-virtualenv-ansible:
       name: "ansible - macos-latest 10.15.7"
       runs-on: macos-latest
