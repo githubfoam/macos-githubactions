@@ -29,7 +29,7 @@ jobs:
           python -m pip install --user ansible  
           echo $PATH          
           export PATH=/opt/local/bin:/opt/local/sbin:$PATH  
-          ansible --version                  
+          # ansible --version  #ansible: command not found                
       - name: "which ansible"
         run: which ansible
 
