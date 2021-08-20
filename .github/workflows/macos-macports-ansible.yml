@@ -51,7 +51,7 @@ jobs:
           sudo port install py37-ansible
           sudo port contents py37-ansible
           sudo port selfupdate && sudo port upgrade py37-ansible
-          ansible --version
+          # ansible --version #ansible: command not found
       - name: "brew cask list"
         run:   brew list --cask #Warning: Calling brew cask list is deprecated! Use brew list [--cask] instead.
       - name: "brew list"
