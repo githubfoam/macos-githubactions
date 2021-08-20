@@ -82,6 +82,27 @@ jobs:
           brew install ansible
           ansible --version 
 
+  macos-latest-homebrew-ansible-playbook:
+      name: "ansible playbook  - macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update     
+      - name: "check on brew version"
+        run: brew --version 
+      - name: "Installing and upgrading Ansible with homebrew"
+        run: |
+          python -V
+          python3 -V
+          pip --version
+          brew install ansible
+          ansible --version 
+          ansible-playbook playbooks/local.yml --check
+      - name: "Run playbook locally"
+        run: ansible-playbook playbooks/local.yml --check
+
   # macos-110:
   #     name: "macos-11.0"
   #     runs-on: macos-11.0 # ProductVersion 11.0.1
