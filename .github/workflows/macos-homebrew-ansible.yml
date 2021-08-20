@@ -55,7 +55,8 @@ jobs:
           ansible-playbook --syntax-check playbooks/localhost_macos.yml
           ansible-playbook --list-hosts playbooks/localhost_macos.yml
           ansible-playbook playbooks/localhost_macos.yml --check 
-          ansible-playbook playbooks/localhost_macos.yml --tags "ruby"       
+          ansible-playbook playbooks/localhost_macos.yml --tags "ruby-install"
+          ansible-playbook playbooks/localhost_macos.yml --tags "ruby-gem-install"       
 
   # macos-110:
   #     name: "macos-11.0"
