@@ -29,9 +29,29 @@ jobs:
           python -m pip install --user ansible  
           echo $PATH          
           export PATH=/opt/local/bin:/opt/local/sbin:$PATH  
+          pip show ansible
           # ansible --version  #ansible: command not found                
       - name: "which ansible"
         run: which ansible
+
+  macos-latest-homebrew-ansible:
+      name: "ansible - macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update     
+      - name: "check on brew version"
+        run: brew --version 
+      - name: "Installing and upgrading Ansible with pip"
+        run: |
+          python -V
+          python3 -V
+          pip --version
+          brew install ansible
+          ansible --version               
+
 
   macos-latest-virtualenv-ansible:
       name: "ansible - macos-latest 10.15.7"
@@ -48,10 +68,10 @@ jobs:
           python -V
           python3 -V
           pip --version
-          python -m pip install --user ansible 
-          python -m virtualenv ansible  # Create a virtualenv if one does not already exist
+          python3 -m pip install --user ansible 
+          python3 -m virtualenv ansible  # Create a virtualenv if one does not already exist
           source ansible/bin/activate   # Activate the virtual environment
-          python -m pip install ansible
+          python3 -m pip install ansible
           ansible --version
 
 
