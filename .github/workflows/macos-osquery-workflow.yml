@@ -3,9 +3,9 @@ name: "macos osquery CI workflow"
 
 on:
   push:
-    branches: [ main ]
-  schedule:
-      - cron:  '0 0 * * 0' #At 00:00 on Sunday every week
+    branches: [ test ]
+  # schedule:
+  #     - cron:  '0 0 * * 0' #At 00:00 on Sunday every week
 
 
 
@@ -42,8 +42,8 @@ jobs:
 
 
   macos-110:
-      name: "macos-11.0"
-      runs-on: macos-11.0 # ProductVersion 11.0.1
+      name: "osquery macos-11.0"
+      runs-on: macos-11 # ProductVersion 11.0.1
       steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -72,7 +72,7 @@ jobs:
 
 
   macos-1015:
-      name: "macos-10.15"
+      name: "osquery macos-10.15"
       runs-on: macos-10.15 # ProductVersion 10.15.7
       steps:
       - name: Checkout
