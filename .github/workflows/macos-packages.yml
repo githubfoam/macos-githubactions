@@ -40,6 +40,8 @@ jobs:
         run: brew update     
       - name: "check on brew version"
         run: brew --version 
+      - name: "check on docker version"
+        run: docker version         
       - name: "Installing ncpa"
         run: |
           # python -V
