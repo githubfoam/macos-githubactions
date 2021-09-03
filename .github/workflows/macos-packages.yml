@@ -11,6 +11,20 @@ on:
 
 jobs:
 
+  macos-latest-snmp:
+      name: "snmp - macos-latest 10.15.7"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update     
+      - name: "check on brew version"
+        run: brew --version 
+      - name: "enable SNMP"
+        run: |
+          sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
+          
   macos-latest-ncpa:
       name: "ncpa - macos-latest 10.15.7"
       runs-on: macos-latest
