@@ -25,7 +25,7 @@ jobs:
         run: |
           # Create a backup of the default SNMP configuration file
           sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
-          cat /etc/snmp/snmpd.conf          
+          cat /etc/snmp/snmpd.conf.orig       
 
   macos-latest-ncpa:
       name: "ncpa - macos-latest 10.15.7"
