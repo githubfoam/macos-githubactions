@@ -25,7 +25,17 @@ jobs:
         run: |
           # Create a backup of the default SNMP configuration file
           sudo mv /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.orig
-          cat /etc/snmp/snmpd.conf.orig       
+          cat /etc/snmp/snmpd.conf.orig 
+          cat <<EOT | sudo tee /etc/snmp/snmpd.conf
+          com2sec local     localhost       COMMUNITY
+          com2sec mynetwork NETWORK/24      COMMUNITY
+          rocommunity public default .1
+          # We limit unauthenticated requesters to the system contact info
+          # rocommunity  public default .1.3.6.1.2.1.1.4 
+          EOT
+          # Enable the SNMP daemon
+          sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+
 
   macos-latest-ncpa:
       name: "ncpa - macos-latest 10.15.7"
