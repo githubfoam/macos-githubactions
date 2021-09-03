@@ -35,6 +35,13 @@ jobs:
           EOT
           # Enable the SNMP daemon
           sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+      - name: "Enable the SNMP daemon"
+        run: |
+          # Enable the SNMP daemon
+          sudo launchctl load -w /System/Library/LaunchDaemons/org.net-snmp.snmpd.plist
+      - name: "snmpwalk"
+        run: |
+          snmpwalk -v 2c -c public
 
 
   macos-latest-ncpa:
