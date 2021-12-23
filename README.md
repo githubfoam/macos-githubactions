@@ -1,6 +1,7 @@
 # macos-githubactions
 
-[![.github/workflows/macos-osquery-workflow.yml](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml/badge.svg?branch=main)](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml)
+[![.github/workflows/macos-osquery-workflow.yml](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml/badge.svg?branch=main)](https://github.com/githubfoam/macos-githubactions/actions/workflows/macos-osquery-workflow.yml)  
+[![matrix java macos CI workflow](https://github.com/githubfoam/macos-githubactions/actions/workflows/jdk-matrix-wf.yml/badge.svg)](https://github.com/githubfoam/macos-githubactions/actions/workflows/jdk-matrix-wf.yml)
 
 CTI, DFIR, OSX
 ~~~~
