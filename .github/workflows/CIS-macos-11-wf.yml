@@ -1,0 +1,42 @@
+
+name: "CIS macos 11 CI workflow"
+
+on:
+  push:
+    branches: [ test ]
+  # schedule:
+  #     - cron:  '0 0 * * 0' #At 00:00 on Sunday every week
+
+
+
+jobs:
+
+  CIS-macos-latest-job:
+      name: "CIS_Apple_macOS_11.0_Big_Sur_Benchmark_v2.0.0  macos-11"
+      runs-on: macos-latest
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update     
+      - name: "check on brew version"
+        run: brew --version 
+      - name: "enable SNMP"
+        run: |
+          # 1.1 Verify all Apple-provided software is current (Automated)
+          sudo defaults read /Library/Preferences/com.apple.SoftwareUpdate | grep -e LastFullSuccessfulDate.
+
+  CIS-macos-11-job:
+      name: "CIS_Apple_macOS_11.0_Big_Sur_Benchmark_v2.0.0  macos-11"
+      runs-on: macos-11
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: "brew update"
+        run: brew update     
+      - name: "check on brew version"
+        run: brew --version 
+      - name: "enable SNMP"
+        run: |
+          # 1.1 Verify all Apple-provided software is current (Automated)
+          sudo defaults read /Library/Preferences/com.apple.SoftwareUpdate | grep -e LastFullSuccessfulDate.
