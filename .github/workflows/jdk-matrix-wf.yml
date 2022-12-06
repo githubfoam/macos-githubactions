@@ -15,7 +15,8 @@ jobs:
       name: "osquery - macos-latest 10.15.7"
       strategy:
         matrix:
-          os: [macos-11,macos-10.15,macos-latest]
+          # os: [macos-11,macos-10.15,macos-latest]        
+          os: [macos-10.15,macos-11,macos-12,macos-latest]
           distro: [microsoft,temurin,zulu,adopt-hotspot,adopt-openj9,liberica]
           jdk: ['17'] #major versions: 8, 11, 16, 17
           jdk-arch: [x64]
